@@ -1,0 +1,517 @@
+@font-face {
+  font-family: "AmsiPro-UltraItalic";
+  src: url("../fonts/AmsiPro-UltraItalic.ttf") format("woff2"), url("../fonts/AmsiPro-UltraItalic.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
+@font-face {
+  font-family: "AmsiPro-Regular";
+  src: url("../fonts/AmsiPro-Regular.ttf") format("woff2"), url("../fonts/AmsiPro-Regular.ttf") format("woff"); /* Older Browsers */
+  /* Add additional font formats as needed */
+}
+body {
+  font-family: "AmsiPro-Regular";
+  background-color: white;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.btn {
+  transition: transform 0.5s;
+}
+.btn:hover {
+  animation: pulsate 1s infinite;
+}
+
+.navbar {
+  background: linear-gradient(180deg, #000 0, rgba(0, 0, 0, 0.738) 19%, rgba(0, 0, 0, 0.541) 34%, rgba(0, 0, 0, 0.382) 47%, rgba(0, 0, 0, 0.278) 56.5%, rgba(0, 0, 0, 0.194) 65%, rgba(0, 0, 0, 0.126) 73%, rgba(0, 0, 0, 0.075) 80.2%, rgba(0, 0, 0, 0.042) 86.1%, rgba(0, 0, 0, 0.021) 91%, rgba(0, 0, 0, 0.008) 95.2%, rgba(0, 0, 0, 0.002) 98.2%, transparent);
+  transition: top 0.5s; /* Add smooth transition */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-toggler {
+  border-color: white;
+  border-width: 3px;
+}
+.navbar .navbar-brand {
+  max-width: 30%;
+  margin-right: 0px;
+}
+.navbar .navbar-brand img {
+  width: 100%;
+}
+.navbar .nav-item {
+  text-align: center;
+}
+.navbar li {
+  margin: 0 15px;
+}
+.navbar li a {
+  font-family: "AmsiPro-UltraItalic";
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+.navbar li a:hover {
+  transform: scale(1.1);
+  color: rgb(147, 212, 218);
+}
+.navbar .collapse.navbar-collapse {
+  justify-content: center;
+}
+.navbar .call__button {
+  margin-left: auto;
+  background-color: rgb(239, 62, 66);
+}
+
+.navbar.hidden {
+  top: -100px; /* Move navbar off-screen */
+}
+
+.call__button {
+  background-color: rgb(239, 62, 66);
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+}
+.call__button i {
+  margin-right: 10px;
+}
+.call__button:hover {
+  background-color: rgb(147, 212, 218);
+}
+
+@media (min-width: 992px) {
+  .navbar .collapse.navbar-collapse {
+    flex-grow: 1;
+    order: 2; /* Move the menu below */
+  }
+  .navbar .call__button__container {
+    order: 3; /* Move the call button to the right */
+  }
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.banner .parallax__container {
+  height: 100%; /* Adjusted height */
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-image: url("../assets/xray.png");
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.banner .texto__banner {
+  text-align: center;
+  justify-content: end;
+  padding: 25px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.banner .texto__banner .animate__fadeInLeft {
+  animation-delay: 0.1s;
+}
+.banner .texto__banner .animate__fadeInRight {
+  animation-delay: 0.4s;
+}
+.banner .texto__banner .animate__fadeInUp {
+  animation-delay: 0.7s;
+}
+.banner .texto__banner h1 {
+  font-family: "AmsiPro-UltraItalic";
+  text-shadow: 2px 2px 2px rgba(51, 51, 51, 0.484);
+  font-size: 2rem;
+  color: white;
+}
+.banner .texto__banner .parrafo__banner__container {
+  display: flex;
+  justify-content: center;
+}
+.banner .texto__banner .parrafo__banner__container .parrafo__banner {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  max-width: 100%;
+  color: rgb(147, 212, 218);
+  font-weight: 600;
+  margin-top: 20px;
+}
+.banner .texto__banner .buttons__container {
+  justify-content: center;
+  margin-top: 30px;
+}
+.banner .texto__banner .buttons__container .contactus__button {
+  background-color: rgb(239, 62, 66);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+  padding: 20px 60px;
+}
+.banner .texto__banner .buttons__container .contactus__button i {
+  margin-right: 10px;
+}
+.banner .texto__banner .buttons__container .contactus__button:hover {
+  background-color: rgb(51, 82, 150);
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .banner {
+    height: 100vh;
+  }
+  .banner .texto__banner {
+    height: 100%;
+    max-width: 70%;
+    padding: 70px 50px;
+    margin-bottom: 100px;
+  }
+  .banner .texto__banner h1 {
+    font-size: 4rem;
+    margin-bottom: 50px;
+  }
+  .banner .texto__banner .parrafo__banner__container .parrafo__banner {
+    margin-bottom: 0px;
+    max-width: 80%;
+    font-size: 1.4rem;
+  }
+}
+.aboutus__section {
+  position: relative;
+  display: flex;
+  padding: 50px 0px;
+  overflow-x: hidden;
+  z-index: 1;
+  background-image: url(../assets/contactusbackground.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aboutus__content {
+  position: relative;
+  z-index: 1;
+  margin: 150px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  text-align: left;
+  padding: 0px 50px;
+}
+.aboutus__content h2 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.aboutus__content p {
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+.aboutus__content .aboutus__content__tittle {
+  display: flex;
+  flex-direction: column;
+  background: rgb(51, 82, 150);
+  justify-content: space-between;
+  padding: 40px 46px;
+  grid-column: span 2; /* Starts from column 3 and spans 2 columns */
+  grid-row: span 2; /* Starts from row 2 */
+  color: white;
+  border-radius: 40px;
+  transition: all 0.5s;
+}
+.aboutus__content .aboutus__content__tittle:hover {
+  scale: 0.9;
+  opacity: 0.9;
+}
+.aboutus__content .aboutus__content__tittle .banner__logo {
+  text-align: center;
+}
+.aboutus__content .aboutus__content__tittle .banner__logo img {
+  width: 300px;
+  height: 229px;
+  border-radius: 40px;
+  border: 4px solid white;
+}
+.aboutus__content .grid__2 {
+  grid-column: 3/span 2;
+  grid-row: 1;
+  background-color: rgb(232, 232, 236);
+  color: black;
+}
+.aboutus__content .grid__3 {
+  grid-column: 3/span 2;
+  grid-row: 2;
+  background-color: #46C2CB;
+  color: white;
+}
+.aboutus__content .aboutus__content__items__card {
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 40px 80px;
+  transition: all 0.5s;
+}
+.aboutus__content .aboutus__content__items__card:hover {
+  scale: 0.9;
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .aboutus__section {
+    overflow: hidden;
+  }
+  .aboutus__section .aboutus__content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__tittle {
+    width: auto;
+    margin-bottom: 0px;
+    padding: 40px 30px;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__tittle .banner__logo {
+    width: 70%;
+    align-self: center;
+    margin-bottom: 20px;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__tittle .banner__logo img {
+    width: 100%;
+    height: auto;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__items__card {
+    width: auto;
+    padding: 0;
+    margin-bottom: 0px;
+    padding: 40px 30px;
+  }
+  .aboutus__section .aboutus__content .aboutus__content__items__card h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+.contact__container {
+  position: relative;
+  display: flex;
+  padding: 50px 0px;
+  overflow-x: hidden;
+  z-index: 1;
+  background-image: url(../assets/xrayaboutusbackground.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact__container .contact__content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  margin: 150px 40px;
+  line-height: 2;
+  flex-grow: 1;
+  align-items: stretch;
+  text-align: left;
+  padding: 0 80px;
+}
+.contact__container .contact__content .contact__content__items__card {
+  background-color: rgba(51, 82, 150, 0.748);
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  justify-content: start;
+  padding: 40px 40px;
+  margin: 0px 20px;
+  transition: all 0.5s;
+}
+.contact__container .contact__content .contact__content__items__card:hover {
+  scale: 0.9;
+  opacity: 0.9;
+}
+.contact__container .contact__content .contact__content__items__card h3 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.contact__container .contact__content .contact__content__items__card p {
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+.contact__container .contact__content .contact__content__items__card a {
+  text-decoration: none;
+  color: rgb(239, 62, 66);
+}
+.contact__container .contact__content .contact__content__items__card .whatsapp__button {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: 0px 0px transparent;
+  padding: 0;
+  color: white;
+}
+.contact__container .contact__content .contact__content__items__card .whatsapp__button:hover {
+  color: rgb(239, 62, 66);
+}
+
+.map__frame {
+  position: relative;
+  z-index: 2;
+  padding: 25px 50px;
+  min-height: 500px;
+  background-image: url(../assets/xrayaboutusbackground.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.map__frame iframe {
+  height: 500px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 992px) {
+  .contact__container {
+    padding: 20px 10px;
+    padding-top: 150px;
+  }
+  .contact__container .contact__content {
+    margin: 10px 0px;
+    flex-direction: column;
+    padding: 0px 20px;
+  }
+  .contact__container .contact__content .contact__content__items__card {
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    margin-bottom: 40px;
+  }
+  .contact__container .contact__content .contact__content__items__card h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .contact__container .contact__content .contact__content__items__card a {
+    width: 100%;
+  }
+  .map__frame {
+    padding: 0;
+  }
+}
+.whatsapp__button {
+  background-color: rgb(51, 82, 150);
+  border-radius: 30px;
+  color: white;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+  font-family: "AmsiPro-UltraItalic";
+  font-size: 1.2rem;
+}
+.whatsapp__button:hover {
+  background-color: rgb(239, 62, 66);
+}
+.whatsapp__button .whatsapp__logo {
+  margin-right: 8px;
+  width: 30px;
+}
+
+.whatsapp__round {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+}
+.whatsapp__round:hover {
+  transform: scale(1.1);
+}
+.whatsapp__round img {
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer__container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.footer__logo {
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer__disclaimer {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .whatsapp__round {
+    bottom: 20px;
+    right: 40px;
+  }
+  .whatsapp__round img {
+    width: 70px; /* Adjust size as needed */
+  }
+  .footer__container {
+    padding: 15px;
+  }
+  .footer__container .footer__logo {
+    width: 150px;
+  }
+  .footer__container p {
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
